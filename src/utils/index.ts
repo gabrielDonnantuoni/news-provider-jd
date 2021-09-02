@@ -1,0 +1,1 @@
+export { default as getConnectionByNodeEnv } from './database/getConnectionByNodeEnv'
