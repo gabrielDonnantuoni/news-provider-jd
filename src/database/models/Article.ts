@@ -1,6 +1,6 @@
 import BaseModel, { Model } from './BaseModel'
 
-export default class Article extends BaseModel {
+export class Article extends BaseModel {
   id!: number
 
   authorId!: number

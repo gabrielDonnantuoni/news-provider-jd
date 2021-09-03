@@ -10,7 +10,6 @@ async function init() {
     console.log('Seeds populated')
     await knexWithDb.destroy()
     process.exit(0)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     if (err.message === `database "${database}" does not exist`) {
       const knexWithoutDb = Knex(KnexConfig())

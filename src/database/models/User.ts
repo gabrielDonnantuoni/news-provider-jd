@@ -3,8 +3,7 @@ import ObjectionPassword from 'objection-password'
 
 const Password = ObjectionPassword()
 
-@Password
-export default class User extends BaseModel {
+export class User extends Password(BaseModel) {
   firstName!: string
 
   lastName!: string

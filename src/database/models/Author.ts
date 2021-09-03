@@ -1,6 +1,6 @@
 import BaseModel, { Model } from './BaseModel'
 
-export default class Author extends BaseModel {
+export class Author extends BaseModel {
   id!: number
 
   name!: string
