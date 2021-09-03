@@ -1,17 +1,10 @@
 import { config as dotenv } from 'dotenv'
 import path from 'path'
+import { IConnection } from '../../helpers'
 
 dotenv({ path: path.resolve(__dirname, '..', '..', '..', '.env') })
 
-interface Connection {
-  host?: string
-  port?: number
-  user?: string
-  password?: string
-  database?: string
-}
-
-export default function (): Connection {
+export function getConnectionByNodeEnv(): IConnection {
   let prefix
 
   switch (process.env.NODE_ENV) {

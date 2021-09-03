@@ -18,6 +18,8 @@
   ],
   "rules": {
     "react/jsx-filename-extension": "off",
-    "@typescript-eslint/semi": ["error", "never", { "beforeStatementContinuationChars": "always"}]
+    "@typescript-eslint/semi": ["error", "never", { "beforeStatementContinuationChars": "always"}],
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }
