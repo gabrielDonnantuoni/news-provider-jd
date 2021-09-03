@@ -18,13 +18,14 @@
     "target": "es6",
     "moduleResolution": "node",
     "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
+      "node",
+      "mocha"
     ]
   },
   "include": [
     "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.test.ts"
   ]
 }
