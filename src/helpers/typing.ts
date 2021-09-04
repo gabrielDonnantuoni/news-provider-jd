@@ -1,6 +1,8 @@
 import { Request, Response, NextFunction } from 'express'
 
-export type IExpressMiddleware = (req: Request, res: Response, next: NextFunction) => Promise<void | Response | NextFunction>
+export type IExpressMiddleware = (
+  req: Request, res: Response, next: NextFunction
+) => Promise<void | Response | NextFunction>
 
 export enum IAuthType {
   Needed = 'Needed',
@@ -10,6 +12,12 @@ export enum IAuthType {
 export interface ILoginBody {
   email: string
   password: string
+}
+
+export interface ISingUpBody extends ILoginBody {
+  firstName: string
+  lastName: string
+  role: 'admin' | 'client'
 }
 
 export interface IConnection {

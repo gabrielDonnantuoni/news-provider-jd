@@ -2,7 +2,7 @@ import Knex from 'knex'
 import KnexConfig from './knexfile'
 import { Model } from 'objection'
 
-const knex = Knex(KnexConfig({ withDatabase: true }))
+export const knex = Knex(KnexConfig({ withDatabase: true }))
 
 Model.knex(knex)
 
