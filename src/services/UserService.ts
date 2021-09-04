@@ -1,6 +1,6 @@
 import { UserModel } from '../database'
 import { ILoginBody, ISingUpBody, EmailNotFoundError, WrongPasswordError,
-  EmailAlreadyExistsError, jwtOptions } from '../helpers'
+  AlreadyExistsError, jwtOptions } from '../helpers'
 import jwt from 'jsonwebtoken'
 
 /**
@@ -41,10 +41,9 @@ export async function login(body: ILoginBody): Promise<{ token: string }> {
  * @param body: { firstName, lastName, email, password }
  */
 export async function singUp(body: ISingUpBody):
-Promise<{ userId: number }> {
+Promise<{ id: number }> {
   const newUser = await UserModel.query().insert({ ...body, role: 'client' })
-    .catch(() => { throw new EmailAlreadyExistsError() })
+    .catch(() => { throw new AlreadyExistsError('Email') })
 
-  const userId = newUser.$id() as number
-  return { userId }
+  return { id: newUser.id }
 }

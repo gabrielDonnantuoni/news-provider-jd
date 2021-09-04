@@ -13,7 +13,7 @@ const singUpRoute = '/api/sing-up'
 describe(`Route "${singUpRoute}"`, () => {
   describe('when it`s sent a body without "email" label', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(singUpRoute)
         .send({
@@ -36,7 +36,7 @@ describe(`Route "${singUpRoute}"`, () => {
 
   describe('when it`s sent a body without "password" label', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(singUpRoute)
         .send({
@@ -59,7 +59,7 @@ describe(`Route "${singUpRoute}"`, () => {
 
   describe('when it`s sent a body without "firstName" label', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(singUpRoute)
         .send({
@@ -82,7 +82,7 @@ describe(`Route "${singUpRoute}"`, () => {
 
   describe('when it`s sent a body without "lastName" label', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(singUpRoute)
         .send({
@@ -105,7 +105,7 @@ describe(`Route "${singUpRoute}"`, () => {
 
   describe('when it`s sent an invalid password with at least 8 characters', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(singUpRoute)
         .send({
@@ -129,7 +129,7 @@ describe(`Route "${singUpRoute}"`, () => {
 
   describe('when it`s sent an password with less than 8 characters', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(singUpRoute)
         .send({
@@ -153,7 +153,7 @@ describe(`Route "${singUpRoute}"`, () => {
 
   describe('when it`s sent an already registered email', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(singUpRoute)
         .send({
@@ -177,7 +177,7 @@ describe(`Route "${singUpRoute}"`, () => {
 
   describe('when it`s sent a correct body', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(singUpRoute)
         .send({
@@ -188,17 +188,17 @@ describe(`Route "${singUpRoute}"`, () => {
         })
     })
 
-    after(async () => {
-      await knex.raw(`DELETE FROM "users" WHERE id=${response.body.userId}`)
+    after('Delete create user', async () => {
+      await knex.raw(`DELETE FROM "users" WHERE id=${response.body.id}`)
     })
 
     it('should return a status Created = 201', () => {
       expect(response.status).to.be.equals(201)
     })
 
-    it('should return a body like { userId: number }', () => {
-      expect(response.body).to.have.own.property('userId')
-      expect(typeof response.body.userId).to.be.equals('number')
+    it('should return a body like { id: number }', () => {
+      expect(response.body).to.have.own.property('id')
+      expect(typeof response.body.id).to.be.equals('number')
     })
   })
 })

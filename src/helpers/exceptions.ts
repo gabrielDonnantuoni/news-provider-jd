@@ -18,9 +18,9 @@ export class EmailNotFoundError extends HttpError {
   }
 }
 
-export class EmailAlreadyExistsError extends HttpError {
-  constructor() {
-    super(Http.Conflict, 'Email already registered')
+export class AlreadyExistsError extends HttpError {
+  constructor(subject: string) {
+    super(Http.Conflict, `${subject} already registered`)
   }
 }
 
