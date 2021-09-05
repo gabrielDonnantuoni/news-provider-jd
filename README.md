@@ -1,8 +1,10 @@
-# Jungle Devs - Node Challenge #001
+# News Provider RESTFUL API with Node.js, Typescript, PostgreSQL and Objection.js
 
 ## Description
 
-**Challenge goal**: The purpose of this challenge is to give an overall understanding of a backend application. You’ll be implementing a simplified version of news provider API. The concepts that you’re going to apply are:
+This project was built on a stage of [JungleDevs](https://www.jungledevs.com/) selective process, where the original repo can be found [here](https://github.com/JungleDevs/node-challenge-001)
+
+**Challenge goal**: The purpose of this challenge is to give an overall understanding of a backend application. You’ll be implementing a simplified version of news provider API.
 
 - REST architecture;
 - Authentication and permissions;
@@ -11,10 +13,6 @@
 - Query optimization;
 - Serialization;
 - Production builds.
-
-**Target level**: This is an all-around challenge that covers both juniors and experienced devs based on the depth of how the concepts were applied.
-
-**Final accomplishment**: By the end of this challenge you’ll have a production ready API.
 
 ## Acceptance criteria
 
@@ -72,10 +70,18 @@
       "body": "<div><p>Second paragraph</p><p>Third paragraph</p></div>"
     }
     ```
+## Install dependencies
 
+- With `npm`: npm install
+- With `yarn`: yarn
+
+## Initial configuration
+
+Rename the `.env.example` file to `.env` and fill it with your data.
 
 ## Instructions to Run
 
 - Database: `docker-compose up` will start the PostgreSQL DB
-- `yarn dev` is configured to start the app.js using nodemon
+- `yarn db:reset` will initiate or restart the db configured with .env variables. Add NODE_ENV=enviromentOfChoice before command to run in that enviroment.
+- `yarn dev` is configured to start the src/index.ts using ts-node-dev
 

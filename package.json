@@ -11,10 +11,12 @@
     "node": "12"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development tsnd --watch src --project tsconfig.json --transpile-only src/index.ts",
     "db:reset": "ts-node ./src/database/scripts/run-resetDb.ts",
+    "dev": "cross-env NODE_ENV=development tsnd --watch src --project tsconfig.json --transpile-only src/index.ts",
+    "build": "tsc -p .",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
     "lint": "eslint . --ext .ts",
-    "test": "NODE_ENV=test mocha --require ts-node/register --exit"
+    "test": "cross-env NODE_ENV=test mocha --require ts-node/register --exit"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
