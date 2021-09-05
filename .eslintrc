@@ -3,7 +3,8 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.eslint.json",
-    "sourceType": "module"
+    "sourceType": "module",
+    "createDefaultProgram": true
   },
   "plugins": [
     "@typescript-eslint"
@@ -20,6 +21,7 @@
     "react/jsx-filename-extension": "off",
     "@typescript-eslint/semi": ["error", "never", { "beforeStatementContinuationChars": "always"}],
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "max-len": ["error", { "ignoreStrings": true, "ignoreTemplateLiterals": true }]
   }
 }

@@ -2,7 +2,8 @@
 import chai from 'chai'
 import chaiHttp from 'chai-http'
 import app from '../../src/app'
-import { knex } from '../../src/database'
+// import { knex } from '../../src/database'
+import { resetDb } from '../../src/database/scripts/resetDb'
 import { Response } from 'superagent'
 
 chai.use(chaiHttp)
@@ -11,6 +12,10 @@ const { expect } = chai
 const singUpRoute = '/api/sing-up'
 
 describe(`Route "${singUpRoute}"`, () => {
+  before('Initialize test database', async () => {
+    await resetDb()
+  })
+
   describe('when it`s sent a body without "email" label', () => {
     let response: Response
     before('Get response from chai.request', async () => {
@@ -186,10 +191,6 @@ describe(`Route "${singUpRoute}"`, () => {
           email: 'sicrano@example.com',
           password: '_Supersecr3t',
         })
-    })
-
-    after('Delete create user', async () => {
-      await knex.raw(`DELETE FROM "users" WHERE id=${response.body.id}`)
     })
 
     it('should return a status Created = 201', () => {

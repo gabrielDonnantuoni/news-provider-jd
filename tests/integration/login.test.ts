@@ -2,6 +2,7 @@
 import chai from 'chai'
 import chaiHttp from 'chai-http'
 import app from '../../src/app'
+import { resetDb } from '../../src/database/scripts/resetDb'
 import { Response } from 'superagent'
 
 chai.use(chaiHttp)
@@ -10,9 +11,13 @@ const { expect } = chai
 const loginRoute = '/api/login'
 
 describe(`Route "${loginRoute}"`, () => {
+  before('Initialize test database', async () => {
+    await resetDb()
+  })
+
   describe('when it`s sent a body without "email" label', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(loginRoute)
         .send({
@@ -33,7 +38,7 @@ describe(`Route "${loginRoute}"`, () => {
 
   describe('when it`s sent a body without "password" label', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(loginRoute)
         .send({
@@ -54,7 +59,7 @@ describe(`Route "${loginRoute}"`, () => {
 
   describe('when it`s sent a email that is not registered', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(loginRoute)
         .send({
@@ -76,7 +81,7 @@ describe(`Route "${loginRoute}"`, () => {
 
   describe('when it`s sent a wrong password', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(loginRoute)
         .send({
@@ -98,7 +103,7 @@ describe(`Route "${loginRoute}"`, () => {
 
   describe('when it`s sent a authorized body', () => {
     let response: Response
-    before(async () => {
+    before('Get response from chai.request', async () => {
       response = await chai.request(app)
         .post(loginRoute)
         .send({
