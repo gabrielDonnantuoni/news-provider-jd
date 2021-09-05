@@ -15,6 +15,22 @@ const buildDataByUser = (user: UserModel) => ({
 })
 
 /**
+ * Verify is user with the received email is registered
+ * @param email user email
+ * @returns boolean
+ */
+export async function isValidUser(data: ReturnType<typeof buildDataByUser>):
+Promise<boolean> {
+  const validUser = await UserModel.query().select('id')
+    .first()
+    .where('firstName', data.firstName)
+    .where('lastName', data.lastName)
+    .where('email', data.email)
+    .where('role', data.role)
+  return !!validUser
+}
+
+/**
  * Try find an user with body.email, then verify password and finally
  * returns a jwt token. If some verification fails, throw proper HttpError.
  * @param body: { email, password }
@@ -29,7 +45,8 @@ export async function login(body: ILoginBody): Promise<{ token: string }> {
 
   const secret = process.env.JWT_SECRET as string
 
-  const token = jwt.sign(buildDataByUser(validUser), secret, jwtOptions)
+  const token = jwt.sign(
+    { data: buildDataByUser(validUser) }, secret, jwtOptions)
 
   return { token }
 }

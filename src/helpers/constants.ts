@@ -1,4 +1,4 @@
 export const jwtOptions = {
-  issuer: 'news-provider-dj',
+  issuer: 'news-provider-jd',
   subject: 'user authentication',
 }

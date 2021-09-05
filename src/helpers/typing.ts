@@ -20,6 +20,20 @@ export interface ISingUpBody extends ILoginBody {
   role: 'admin' | 'client'
 }
 
+export interface IAuthorCreateBody {
+  name: string
+  picture: string
+}
+
+export interface IAuthorDeleteBody {
+  id?: number
+  name?: string
+}
+
+export interface IAuthorUpdateBody extends IAuthorDeleteBody {
+  picture: string
+}
+
 export interface IConnection {
   host?: string
   port?: number

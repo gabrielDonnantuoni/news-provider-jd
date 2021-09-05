@@ -14,8 +14,8 @@ export const login = tcw(async (req, res, _next) => {
 
 /**
  * Middeware that tries to sing up with the Request body.
- * If body matches with database, responds with { userId }
- * where userId is the id of the new user created.
+ * If body matches with database, responds with { id }
+ * where id is the id of the new user created.
  */
 export const singUp = tcw(async (req, res, _next) => {
   const response = await UserService.singUp(req.body)

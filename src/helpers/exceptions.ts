@@ -29,3 +29,21 @@ export class WrongPasswordError extends HttpError {
     super(Http.Unauthorized, 'Wrong password')
   }
 }
+
+export class TokenNotFoundError extends HttpError {
+  constructor() {
+    super(Http.Unauthorized, 'Token not found')
+  }
+}
+
+export class ExpiredOrInvalidTokenError extends HttpError {
+  constructor() {
+    super(Http.Unauthorized, 'Expired or invalid token')
+  }
+}
+
+export class InvalidRoleError extends HttpError {
+  constructor() {
+    super(Http.Forbidden, 'Access denied')
+  }
+}
