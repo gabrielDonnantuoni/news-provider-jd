@@ -15,7 +15,7 @@ export const create = tcw(async (req, res, _next) => {
 /**
  * Middeware that tries to get all authors.
  */
-export const getAll = tcw(async (req, res, _next) => {
+export const getAll = tcw(async (_req, res, _next) => {
   const response = await AuthorService.getAll()
   res.status(Http.Ok).json(response)
 })

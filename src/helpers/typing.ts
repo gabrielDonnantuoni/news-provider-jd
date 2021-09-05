@@ -25,6 +25,23 @@ export interface IAuthorCreateBody {
   picture: string
 }
 
+export interface IArticleCreateBody {
+  authorId: number
+  categoryId: number
+  title: string
+  summary: string
+  firstParagraph: string
+  body: string
+}
+
+export interface IArticleUpdateBody {
+  categoryId?: number
+  title?: string
+  summary?: string
+  firstParagraph?: string
+  body?: string
+}
+
 export interface IAuthorUpdateBody {
   picture: string
 }
