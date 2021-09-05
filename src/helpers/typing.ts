@@ -25,12 +25,7 @@ export interface IAuthorCreateBody {
   picture: string
 }
 
-export interface IAuthorDeleteBody {
-  id?: number
-  name?: string
-}
-
-export interface IAuthorUpdateBody extends IAuthorDeleteBody {
+export interface IAuthorUpdateBody {
   picture: string
 }
 

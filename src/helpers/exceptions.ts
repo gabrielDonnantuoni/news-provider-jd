@@ -65,3 +65,9 @@ export class NotFoundError extends HttpError {
     super(Http.NotFound, 'Resource not found or implemented')
   }
 }
+
+export class NotFoundEntityByIdError extends HttpError {
+  constructor(entity: string, id: string) {
+    super(Http.NotFound, `${entity} with id=${id} was not found`)
+  }
+}
