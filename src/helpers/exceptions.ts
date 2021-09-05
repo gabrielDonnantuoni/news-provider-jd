@@ -47,3 +47,9 @@ export class InvalidRoleError extends HttpError {
     super(Http.Forbidden, 'Access denied')
   }
 }
+
+export class QueryParamMissingError extends HttpError {
+  constructor(param: string) {
+    super(Http.BadRequest, `Query missing '${param}'`)
+  }
+}

@@ -5,9 +5,9 @@ export class Article extends BaseModel {
 
   authorId!: number
 
+  categoryId!: number
+  
   title!: string
-
-  category!: string
 
   summary!: string
 
@@ -23,7 +23,16 @@ export class Article extends BaseModel {
       modelClass: 'Author',
       join: {
         from: 'articles.authorId',
-        to: 'author.id',
+        to: 'authors.id',
+      },
+    },
+
+    category: {
+      relation: Model.HasOneRelation,
+      modelClass: 'Category',
+      join: {
+        from: 'articles.categoryId',
+        to: 'categories.id',
       },
     },
   }
