@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
 import routes from './routes'
-import { errorHandler } from './middlewares'
+import { errorHandler, methodNotAllowed, notFound } from './middlewares'
 
 const app = express()
 
@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
 
 app.use('/api', routes)
 
-app.use(errorHandler)
+app.use(methodNotAllowed, notFound, errorHandler)
 
 export default app

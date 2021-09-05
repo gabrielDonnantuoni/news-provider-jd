@@ -53,3 +53,15 @@ export class QueryParamMissingError extends HttpError {
     super(Http.BadRequest, `Query missing '${param}'`)
   }
 }
+
+export class MethodNotAllowedError extends HttpError {
+  constructor() {
+    super(Http.MethodNotAllowed, 'Http Method not allowed to this path')
+  }
+}
+
+export class NotFoundError extends HttpError {
+  constructor() {
+    super(Http.NotFound, 'Resource not found or implemented')
+  }
+}
