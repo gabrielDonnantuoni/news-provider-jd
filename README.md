@@ -90,3 +90,9 @@ Rename the `.env.example` file to `.env` and fill it with your data.
 ## Live app
 
 You can see this app running on heroku with AWS RDS [here](https://news-provider-api.herokuapp.com/)
+
+## To Do
+ - [ ] Finish integration tests
+ - [ ] Implement unit tests
+ - [ ] Build an landing page on the path: `/`
+ - [ ] Build an api usage page on the path: `/api`
