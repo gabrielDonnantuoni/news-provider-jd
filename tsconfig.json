@@ -20,12 +20,19 @@
     "types": [
       "node",
       "mocha"
-    ]
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
   "include": [
-    "src/**/*.ts"
+    "server/**/*.ts"
   ],
   "exclude": [
-    "src/**/*.test.ts"
+    "server/**/*.test.ts"
   ]
 }

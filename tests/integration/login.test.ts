@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import chai from 'chai'
 import chaiHttp from 'chai-http'
-import app from '../../src/app'
-import { resetDb } from '../../src/database/scripts/resetDb'
+import { getApp } from '../../server/app'
+import { resetDb } from '../../server/database/scripts/resetDb'
 import { Response } from 'superagent'
 
 chai.use(chaiHttp)
@@ -11,7 +11,10 @@ const { expect } = chai
 const loginRoute = '/api/login'
 
 describe(`Route "${loginRoute}"`, () => {
-  before('Initialize test database', async () => {
+  let app
+
+  before('Initialize test app and database', async () => {
+    app = await getApp()
     await resetDb()
   })
 

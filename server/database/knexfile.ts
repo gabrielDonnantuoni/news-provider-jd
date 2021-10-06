@@ -34,8 +34,4 @@ function config(options?: Options): Knex.Config {
   }
 }
 
-// const knex = Knex(config())
-
-// knex.raw('CREATE TABLE IF NOT EXISTS ??', database)
-
 export default config

@@ -11,9 +11,9 @@
     "node": "12"
   },
   "scripts": {
-    "db:reset": "ts-node ./src/database/scripts/run-resetDb.ts",
-    "dev": "cross-env NODE_ENV=development tsnd --watch src --project tsconfig.json --transpile-only src/index.ts",
-    "build": "tsc -p .",
+    "db:reset": "ts-node ./server/database/scripts/run-resetDb.ts",
+    "dev": "cross-env NODE_ENV=development tsnd --watch server --project tsconfig.json --transpile-only server/index.ts",
+    "build": "tsc -p . && next build",
     "start": "NODE_ENV=production node dist/index.js",
     "lint": "eslint . --ext .ts",
     "test": "cross-env NODE_ENV=test mocha --require ts-node/register --exit"
@@ -43,6 +43,11 @@
     "typescript": "^4.4.2"
   },
   "dependencies": {
+    "@emotion/cache": "^11.4.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.1",
+    "@mui/material": "^5.0.2",
     "@status/codes": "^1.6.2",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
@@ -51,9 +56,13 @@
     "joi": "^17.4.2",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.12",
+    "next": "^11.1.2",
     "objection": "^2.2.3",
     "objection-password": "^3.0.0",
     "pg": "^8.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-json-view": "^1.21.3",
     "tslib": "^2.3.1"
   }
 }

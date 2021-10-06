@@ -83,8 +83,8 @@ Rename the `.env.example` file to `.env` and fill it with your data.
 
 - Database: `docker-compose up` will start the PostgreSQL DB
 - `yarn db:reset` will initiate or restart the db configured with .env variables. Add NODE_ENV=enviromentOfChoice before command to run in that enviroment.
-- `yarn dev` is configured to start the src/index.ts using ts-node-dev
-- `yarn build` will emit js files on `dist` directory
+- `yarn dev` is configured to start the server/index.ts using ts-node-dev
+- `yarn build` will build the next app and emit js files on `dist` directory
 - `yarn start` will start the app in production mode.
 
 ## Live app
@@ -92,7 +92,6 @@ Rename the `.env.example` file to `.env` and fill it with your data.
 You can see this app running on heroku with AWS RDS [here](https://news-provider-api.herokuapp.com/)
 
 ## To Do
+ - [ ] Build an landing page on the path: `/`
  - [ ] Finish integration tests
  - [ ] Implement unit tests
- - [ ] Build an landing page on the path: `/`
- - [ ] Build an api usage page on the path: `/api`
