@@ -10,7 +10,7 @@ export default function BackToTop(): JSX.Element {
     <React.Fragment>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography variant="h3" sx={{ flexGrow: 1 }}>
+          <Typography variant="h4" sx={{ flexGrow: 1 }}>
             News Provider API
           </Typography>
           <IconButton

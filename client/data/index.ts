@@ -1,1 +1,6 @@
 export * from './dependencies'
+export * from './methods'
+export * from './knownPaths'
+export * from './categories'
+export * from './userTypes'
+export * from './reqBodies'

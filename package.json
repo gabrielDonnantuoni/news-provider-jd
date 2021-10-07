@@ -49,6 +49,7 @@
     "@mui/icons-material": "^5.0.1",
     "@mui/material": "^5.0.2",
     "@status/codes": "^1.6.2",
+    "axios": "^0.22.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",

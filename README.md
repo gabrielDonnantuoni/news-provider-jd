@@ -92,6 +92,19 @@ Rename the `.env.example` file to `.env` and fill it with your data.
 You can see this app running on heroku with AWS RDS [here](https://news-provider-api.herokuapp.com/)
 
 ## To Do
- - [ ] Build an landing page on the path: `/`
+ - [x] Build an landing page on the path: `/`
  - [ ] Finish integration tests
  - [ ] Implement unit tests
+
+## Chalenges and choices
+
+Talking about the tools chosen to build this application, the language(Node.js), ORM and database were proposed by the task.
+In this context of backend, what is nice to emphasize is the solutions I built for validations of received data (`req.body`)
+and validation of Authentication, that could be required or just a privilege. Look for it in `server/middlewares`.
+Besides that I chose to use Typescript, a superset of Javascript that helps a lot with autocompletes when conding and with
+catching erros before run.
+
+Now about frontend, I have the oportunity to choose everything. I setted a goal to build a landing page with real-time interaction with the API.
+I opted for React that is a UI lib that I have more proficiency with.
+On top of React, I added Next.js a framework that has built-in Server Side Rendering which helps with SEO. For help with styling I picked Material UI
+that is a easy to use UI library for React that has really nice features and helps to save a lot time.

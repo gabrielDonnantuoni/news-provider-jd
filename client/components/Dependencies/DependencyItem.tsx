@@ -9,7 +9,7 @@ interface Props {
 
 export default function DependencyItem({ href, name }: Props): JSX.Element {
   return (
-    <Grid item xs={6} md={4} lg={2}>
+    <Grid item xs={6} md={4} lg={3}>
       <Button
         fullWidth
         variant="outlined"
