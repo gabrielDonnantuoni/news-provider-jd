@@ -96,13 +96,13 @@ You can see this app running on heroku with AWS RDS [here](https://news-provider
  - [ ] Finish integration tests
  - [ ] Implement unit tests
 
-## Chalenges and choices
+## Challenges and choices
 
 Talking about the tools chosen to build this application, the language(Node.js), ORM and database were proposed by the task.
 In this context of backend, what is nice to emphasize is the solutions I built for validations of received data (`req.body`)
 and validation of Authentication, that could be required or just a privilege. Look for it in `server/middlewares`.
 Besides that I chose to use Typescript, a superset of Javascript that helps a lot with autocompletes when conding and with
-catching erros before run.
+catching erros before running.
 
 Now about frontend, I have the oportunity to choose everything. I setted a goal to build a landing page with real-time interaction with the API.
 I opted for React that is a UI lib that I have more proficiency with.
